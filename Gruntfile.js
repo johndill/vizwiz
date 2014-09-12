@@ -45,8 +45,11 @@ module.exports = function (grunt) {
         tasks: ['newer:jshint:test', 'karma']
       },
       styles: {
-        files: ['<%= yeoman.app %>/styles/{,*/}*.css'],
-        tasks: ['newer:copy:styles', 'autoprefixer']
+        files: [
+          '<%= yeoman.app %>/styles/{,*/}*.css',
+          '<%= yeoman.app %>/styles/{,*/}*.less'
+        ],
+        tasks: ['less','newer:copy:styles', 'autoprefixer']
       },
       gruntfile: {
         files: ['Gruntfile.js']
@@ -291,6 +294,20 @@ module.exports = function (grunt) {
     cdnify: {
       dist: {
         html: ['<%= yeoman.dist %>/*.html']
+      }
+    },
+
+    // Compile less
+    less: {
+      options: {
+        paths: ['<%= yeoman.app %>/styles/less']
+      },
+      files: {
+        expand: true,
+        cwd: '<%= yeoman.app %>/styles/less',
+        src: ['{,*/}*.less'],
+        dest: '<%= yeoman.app %>/styles',
+        ext: '.css'
       }
     },
 
