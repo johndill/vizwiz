@@ -16,7 +16,17 @@
 
 .navbar-inverse {
 	background-color: @vizPurple;
-	color: @vizOrange;
+	background: linear-gradient(@vizPurple, black);
+}
+
+.navbar-inverse {
+	& .navbar-text, .navbar-nav > li > a {
+		color: @vizOrange;
+	}
+	& .navbar-nav > li > a:hover {
+		color: @vizYellow;
+		text-decoration: underline;
+	}
 }
 
 /* Custom page footer */
