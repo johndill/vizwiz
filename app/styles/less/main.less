@@ -5,6 +5,8 @@
 
 body {
   background-image: url('../images/bg.jpg');
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: 400;
 }
 
 .navbar-brand.logo {
@@ -13,6 +15,8 @@ body {
 
 .navbar-brand.title {
 	font-size: 32px;
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: 400;
 	color: @vizOrange;
 	&:hover {
 		color: @vizYellow;
@@ -38,6 +42,86 @@ body {
     padding: 6px 10px;
     &:hover, &:focus {
       background-color: @vizDarkPurple;
+    }
+  }
+}
+
+.btn-primary {
+  color: @vizOrange;
+  background-color: @vizPurple;
+  background: linear-gradient(@vizPurple, @vizDarkPurple);
+  border-color: @vizDarkPurple;
+
+  &:hover, &:focus {
+    color: @vizYellow;
+  }
+
+  &:active {
+    color: @vizYellow;
+    background-color: darken(@vizPurple, 5%);
+    background: linear-gradient(darken(@vizPurple, 5%), darken(@vizDarkPurple, 5%));
+    border-color: darken(@vizDarkPurple, 5%);
+  }
+}
+
+.content-area {
+  margin-top: 60px;
+  & h2 {
+    font-weight: 700;
+    text-shadow: 2px 2px 7px rgba(150, 150, 150, .3);
+  }
+}
+
+.form-signin {
+  max-width: 300px;
+  margin: 0 auto;
+  & .form-signin-heading {
+    color: @vizOrange;
+    text-align: center;
+  }
+  & .form-signin-heading, .checkbox {
+    margin-bottom: 20px;
+  }
+
+  & .form-control {
+    position: relative;
+    font-size: 16px;
+    heignt: auto;
+    padding: 10px;
+    background-color: fade(@vizPurple, 15%);
+    color: @vizDarkPurple;
+  }
+
+  & .checkbox {
+    margin-left: 20px;
+  }
+  & label {
+    color: @vizOrange;
+    font-size: 16px;
+    text-shadow: 2px 2px 7px rgba(150, 150, 150, .3);
+  }
+  & input {
+    border-radius: 0;
+    margin-bottom: -1px;
+  }
+  & input.round-top {
+    margin-bottom: -1px;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+  }
+  & input.round-bottom {
+    margin-bottom: 20px;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+  }
+  & .other-signup-option {
+    margin-top: 15px;
+    color: @vizPurple;
+    & a {
+      color: @vizOrange;
+      &:hover {
+        color: @vizYellow;
+      }
     }
   }
 }

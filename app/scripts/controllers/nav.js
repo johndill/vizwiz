@@ -1,12 +1,12 @@
 'use strict';
 
 angular.module('vizwizApp')
-  .controller('NavCtrl', function ($scope) {
-  	$scope.loggedIn = true;
+  .controller('NavCtrl', ['$scope', '$rootScope', function ($scope, $rootScope) {
   	$scope.logout = function () {
-  		$scope.loggedIn = false;
+  		$rootScope.loggedIn = false;
   	};
+  	
   	$scope.login = function () {
-  		$scope.loggedIn = true;
+  		$rootScope.loggedIn = true;
   	};
-  });
+  }]);

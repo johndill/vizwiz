@@ -1,1 +1,15 @@
-<div ng-include src="'/views/nav.html'"></div>
+<div class="header" ng-include src="'/views/nav.html'"></div>
+<div class="row content-area">
+  <form class="form-signin">       
+    <h2 class="form-signin-heading">Signup</h2>
+    <input type="text" class="form-control round-top" name="username" placeholder="Email address" required="" autofocus="" />
+    <input type="text" class="form-control" name="displayname" placeholder="Display name" required="" autofocus="" />
+    <input type="password" class="form-control" name="password" placeholder="Password" required=""/>
+    <input type="password" class="form-control round-bottom" name="password2" placeholder="Re-enter password" required=""/>
+    <label class="checkbox">
+      <input type="checkbox" value="remember-me" id="rememberMe" name="rememberMe"> Remember me
+    </label>
+    <button class="btn btn-lg btn-primary btn-block" type="submit" ng-click="login()">Sign me up</button>
+    <p class="other-signup-option">Already have an account? <a ng-href="#/login">Login</a></p>
+  </form>
+</div>

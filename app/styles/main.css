@@ -1,11 +1,15 @@
 body {
   background-image: url('../images/bg.jpg');
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: 400;
 }
 .navbar-brand.logo {
   padding-top: 8px;
 }
 .navbar-brand.title {
   font-size: 32px;
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: 400;
   color: #ee9e1a;
 }
 .navbar-brand.title:hover {
@@ -31,5 +35,80 @@ body {
 .navbar-inverse .navbar-toggle:hover,
 .navbar-inverse .navbar-toggle:focus {
   background-color: #34254a;
+}
+.btn-primary {
+  color: #ee9e1a;
+  background-color: #563d7c;
+  background: linear-gradient(#563d7c, #34254a);
+  border-color: #34254a;
+}
+.btn-primary:hover,
+.btn-primary:focus {
+  color: #eec616;
+}
+.btn-primary:active {
+  color: #eec616;
+  background-color: #4a356b;
+  background: linear-gradient(#4a356b, #281c39);
+  border-color: #281c39;
+}
+.content-area {
+  margin-top: 60px;
+}
+.content-area h2 {
+  font-weight: 700;
+  text-shadow: 2px 2px 7px rgba(150, 150, 150, 0.3);
+}
+.form-signin {
+  max-width: 300px;
+  margin: 0 auto;
+}
+.form-signin .form-signin-heading {
+  color: #ee9e1a;
+  text-align: center;
+}
+.form-signin .form-signin-heading,
+.form-signin .checkbox {
+  margin-bottom: 20px;
+}
+.form-signin .form-control {
+  position: relative;
+  font-size: 16px;
+  heignt: auto;
+  padding: 10px;
+  background-color: rgba(86, 61, 124, 0.15);
+  color: #34254a;
+}
+.form-signin .checkbox {
+  margin-left: 20px;
+}
+.form-signin label {
+  color: #ee9e1a;
+  font-size: 16px;
+  text-shadow: 2px 2px 7px rgba(150, 150, 150, 0.3);
+}
+.form-signin input {
+  border-radius: 0;
+  margin-bottom: -1px;
+}
+.form-signin input.round-top {
+  margin-bottom: -1px;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+}
+.form-signin input.round-bottom {
+  margin-bottom: 20px;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+.form-signin .other-signup-option {
+  margin-top: 15px;
+  color: #563d7c;
+}
+.form-signin .other-signup-option a {
+  color: #ee9e1a;
+}
+.form-signin .other-signup-option a:hover {
+  color: #eec616;
 }
 /* Custom page footer */
