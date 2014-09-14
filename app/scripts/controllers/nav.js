@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('vizwizApp')
-  .controller('NavCtrl', ['$scope', '$rootScope', function ($scope, $rootScope) {
+  .controller('NavCtrl', ['$scope', '$rootScope', '$location', function ($scope, $rootScope, $location) {
   	$scope.logout = function () {
   		$rootScope.loggedIn = false;
   	};
@@ -9,4 +9,6 @@ angular.module('vizwizApp')
   	$scope.login = function () {
   		$rootScope.loggedIn = true;
   	};
+  	$scope.showSignup = $location.path() === '/login';
+  	$scope.showLogin = $location.path() === '/signup';
   }]);

@@ -11,11 +11,12 @@
         vizwiz
       </div>
     </div>
+
     <div class="collapse navbar-collapse" id="nav-links">
       <ul class="nav navbar-nav navbar-right">
         <li><a ng-href="#/login" ng-show="loggedIn" ng-click="logout()">Logout</a></li>
-        <li><a ng-href="#/login" ng-show="!loggedIn">Login</a></li>
-        <li><a ng-href="#/signup" ng-show="!loggedIn">Signup</a></li>
+        <li><a ng-href="#/login" ng-show="showLogin">Login</a></li>
+        <li><a ng-href="#/signup" ng-show="showSignup">Signup</a></li>
       </ul>
       <p class="navbar-text navbar-right" ng-show="loggedIn">
         Logged in as Username
