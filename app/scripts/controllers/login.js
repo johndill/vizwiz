@@ -2,5 +2,5 @@
 
 angular.module('vizwizApp')
   .controller('LoginCtrl', function ($scope) {
-  	// stuff
+  	$scope.something = '';
   });

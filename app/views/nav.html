@@ -1,0 +1,25 @@
+<div class="navbar navbar-inverse navbar-fixed-top" role="navigation" ng-controller="NavCtrl">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#nav-links">
+        <span class="glyphicon glyphicon-user"></span>
+      </button>
+      <div class="navbar-brand logo">
+        <img src="/images/vizwiz.png" height="36"></img>
+      </div>
+      <div class="navbar-brand title">
+        vizwiz
+      </div>
+    </div>
+    <div class="collapse navbar-collapse" id="nav-links">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a ng-href="#/login" ng-show="loggedIn" ng-click="logout()">Logout</a></li>
+        <li><a ng-href="#/login" ng-show="!loggedIn">Login</a></li>
+        <li><a ng-href="#/signup" ng-show="!loggedIn">Signup</a></li>
+      </ul>
+      <p class="navbar-text navbar-right" ng-show="loggedIn">
+        Logged in as Username
+      </p>
+    </div>
+  </div>
+</div>

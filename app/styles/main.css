@@ -12,6 +12,7 @@ body {
   color: #eec616;
 }
 .navbar-inverse {
+  color: #ee9e1a;
   background-color: #563d7c;
   background: linear-gradient(#563d7c, #34254a);
 }
@@ -25,6 +26,7 @@ body {
 }
 .navbar-inverse .navbar-toggle {
   border-color: #34254a;
+  padding: 6px 10px;
 }
 .navbar-inverse .navbar-toggle:hover,
 .navbar-inverse .navbar-toggle:focus {

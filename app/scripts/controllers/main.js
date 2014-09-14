@@ -9,5 +9,5 @@
  */
 angular.module('vizwizApp')
   .controller('MainCtrl', function ($scope) {
-  	// stuff
+  	$scope.something = '';
   });
