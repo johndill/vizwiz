@@ -1,13 +1,18 @@
 @vizOrange: #EE9E1A;
 @vizYellow: #EEC616;
+@vizDarkPurple: #34254A;
 @vizPurple: #563d7c;
+
+body {
+  background-image: url('../images/bg.jpg');
+}
 
 .navbar-brand.logo {
 	padding-top: 8px;
 }
 
 .navbar-brand.title {
-	font-size: 42px;
+	font-size: 32px;
 	color: @vizOrange;
 	&:hover {
 		color: @vizYellow;
@@ -15,18 +20,24 @@
 }
 
 .navbar-inverse {
-	background-color: @vizPurple;
-	background: linear-gradient(@vizPurple, black);
-}
+  background-color: @vizPurple;
+  background: linear-gradient(@vizPurple, @vizDarkPurple);
 
-.navbar-inverse {
 	& .navbar-text, .navbar-nav > li > a {
 		color: @vizOrange;
 	}
-	& .navbar-nav > li > a:hover {
+	
+  & .navbar-nav > li > a:hover {
 		color: @vizYellow;
 		text-decoration: underline;
 	}
+  
+  & .navbar-toggle {
+    border-color: @vizDarkPurple;
+    &:hover, &:focus {
+      background-color: @vizDarkPurple;
+    }
+  }
 }
 
 /* Custom page footer */
