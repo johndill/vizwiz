@@ -1,1 +1,25 @@
 <div ng-include src="'/views/nav.html'"></div>
+<div class="content-area">
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<div class="panel-title"><span class="glyphicon glyphicon-stats"></span>&nbsp;&nbsp;my viz</div>
+		</div>
+		<div class="panel-body">
+			<div class="viz-preview" ng-repeat="v in viz">
+				<div class="viz-thumbnail"></div>
+				<div class="viz-title">{{ v.title }}</div>
+			</div>
+		</div>
+	</div>
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<div class="panel-title"><span class="glyphicon glyphicon-th"></span>&nbsp;&nbsp;my data</div>
+		</div>
+		<div class="panel-body">
+			<div class="dataset-item" ng-repeat="ds in datasets">
+				<div class="dataset-title">{{ ds.title }}</div>
+				<div class="dataset-description">{{ ds.description }}</div>
+			</div>
+		</div>
+	</div>
+</div>

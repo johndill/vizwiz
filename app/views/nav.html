@@ -1,3 +1,4 @@
+<div class="row">
 <div class="navbar navbar-inverse navbar-fixed-top" role="navigation" ng-controller="NavCtrl">
   <div class="container">
     <div class="navbar-header">
@@ -14,7 +15,7 @@
 
     <div class="collapse navbar-collapse" id="nav-links">
       <ul class="nav navbar-nav navbar-right">
-        <li><a ng-href="#/login" ng-show="loggedIn" ng-click="logout()">Logout</a></li>
+        <li><a ng-href="#/login" ng-show="loggedIn" ng-click="logout()" style="padding-right:2px;">Logout</a></li>
         <li><a ng-href="#/login" ng-show="showLogin">Login</a></li>
         <li><a ng-href="#/signup" ng-show="showSignup">Signup</a></li>
       </ul>
@@ -23,4 +24,5 @@
       </p>
     </div>
   </div>
+</div>
 </div>

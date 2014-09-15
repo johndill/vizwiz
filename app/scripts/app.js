@@ -40,6 +40,7 @@ angular
       });
   })
   .run(['$rootScope', '$location', function ($rootScope, $location) {
+    $rootScope.loggedIn = true;
     $rootScope.$on('$routeChangeStart', function(e, next) {
       if (!$rootScope.loggedIn && next.$$route.originalPath !== '/signup') { 
         $location.path('login');
