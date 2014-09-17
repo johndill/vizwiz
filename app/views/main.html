@@ -2,7 +2,14 @@
 <div class="content-area">
 	<div class="panel panel-default">
 		<div class="panel-heading">
-			<div class="panel-title"><span class="glyphicon glyphicon-stats"></span>&nbsp;&nbsp;my viz</div>
+			<div class="panel-title">
+				<span class="glyphicon glyphicon-stats"></span>
+				&nbsp;&nbsp;my viz
+				<span class="btn btn-primary add-item">
+					<span class="glyphicon glyphicon-plus-sign"></span>
+					new viz
+				</span>
+			</div>
 		</div>
 		<div class="panel-body">
 			<div class="viz-preview" ng-repeat="v in viz">
@@ -17,7 +24,14 @@
 	</div>
 	<div class="panel panel-default">
 		<div class="panel-heading">
-			<div class="panel-title"><span class="glyphicon glyphicon-th"></span>&nbsp;&nbsp;my data</div>
+			<div class="panel-title">
+				<span class="glyphicon glyphicon-th"></span>
+				&nbsp;&nbsp;my data
+				<span class="btn btn-primary add-item">
+					<span class="glyphicon glyphicon-plus-sign"></span>
+					new data
+				</span>
+			</div>
 		</div>
 		<div class="panel-body">
 			<div class="dataset-item" ng-repeat="ds in datasets">

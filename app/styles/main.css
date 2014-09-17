@@ -181,6 +181,11 @@ body {
 .form-signin .other-signup-option a:hover {
   color: #eec616;
 }
+.add-item {
+  float: right;
+  margin-top: -2px;
+  margin-right: -8px;
+}
 .delete-item {
   color: #ee9e1a;
   cursor: default;
