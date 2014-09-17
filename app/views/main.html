@@ -6,7 +6,11 @@
 		</div>
 		<div class="panel-body">
 			<div class="viz-preview" ng-repeat="v in viz">
-				<div class="viz-thumbnail"></div>
+				<div class="viz-thumbnail">
+					<div class="delete-item" title="delete viz">
+						<span class="glyphicon glyphicon-trash"></span>
+					</div>
+				</div>
 				<div class="viz-title">{{ v.title }}</div>
 			</div>
 		</div>
@@ -17,6 +21,9 @@
 		</div>
 		<div class="panel-body">
 			<div class="dataset-item" ng-repeat="ds in datasets">
+				<div class="delete-item" title="delete dataset">
+					<span class="glyphicon glyphicon-trash"></span>
+				</div>
 				<div class="dataset-title">{{ ds.title }}</div>
 				<div class="dataset-description">{{ ds.description }}</div>
 			</div>

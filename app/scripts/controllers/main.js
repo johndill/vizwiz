@@ -32,7 +32,7 @@ angular.module('vizwizApp')
   		{ title: 'viz-20' }
 		];
     $scope.datasets = [
-      { title: 'data-1', description: 'this is a sample description' },
+      { title: 'data-1', description: 'THIS is a sample description' },
       { title: 'data-2', description: 'this is a sample description' },
       { title: 'data-3', description: 'this is a sample description' },
       { title: 'data-4', description: 'this is a sample description' },

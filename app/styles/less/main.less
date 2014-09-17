@@ -73,8 +73,10 @@ body {
 }
 
 .panel {
+  border: 0;
   border-color: @vizOrange;
   border-radius: 0;
+  background-color: fade(@vizOrange, 20%);
   & .panel-heading {
     border-color: @vizOrange;
     border-radius: 0;
@@ -105,6 +107,14 @@ body {
     width: 160px;
     height: 120px;
     border: 1px solid @vizOrange;
+    background-color: white;
+    cursor: pointer;
+    &:hover {
+      border: 2px solid @vizOrange;
+      & .delete-item {
+        display: block;
+      }
+    }
   }
   & .viz-title {
     color: @vizPurple;
@@ -112,10 +122,27 @@ body {
 }
 
 .dataset-item {
-  border: 1px solid @vizOrange;
-  & .dataset-title, & .dataset-description {
-    display: inline-block;
+  border: 0;
+  padding: 5px;
+  padding-left: 10px;
+  margin-top: 0px;
+  cursor: pointer;
+  &:hover {
+    background-color: fade(@vizOrange, 30%);
+    & .delete-item {
+      display: block;
+    }
   }
+  & .dataset-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: @vizPurple;
+  }
+  & .dataset-description {
+    margin-top: -5px;
+    color: fade(@vizPurple, 75%);
+  }
+  transition: background-color .3s;
 }
 
 .form-signin {
@@ -170,6 +197,19 @@ body {
       }
     }
   }
+}
+
+.delete-item {
+  color: @vizOrange;
+  cursor: default;
+  float: right;
+  padding: 5px;
+  display: none;
+  &:hover {
+    color: @vizPurple;
+    transition: color .2s;
+  }
+  transition: color .2s;
 }
 
 /* Custom page footer */
