@@ -76,7 +76,7 @@ body {
   border: 0;
   border-color: @vizOrange;
   border-radius: 0;
-  background-color: fade(@vizOrange, 20%);
+  background-color: fade(white, 0%);
   & .panel-heading {
     border-color: @vizOrange;
     border-radius: 0;
@@ -95,6 +95,34 @@ body {
     max-height: 320px;
     overflow-y: scroll;
     padding: 10px;
+    background-color: fade(@vizOrange, 20%);
+  }
+}
+
+.panel.edit-item {
+  background-color: fade(white, 0%);
+  margin-bottom: 0;
+  & .panel-heading {
+    border-color: @vizDarkPurple;
+    background-color: @vizPurple;
+    background: linear-gradient(@vizPurple, @vizDarkPurple);
+    & .panel-title {
+      color: @vizOrange;
+      font-size: 16px;
+      font-weight: 400;
+      & .show-icon, .hide-icon {
+        float: right;
+        margin-top: 3px;
+        cursor: pointer;
+      }
+      & .hide-icon {
+        display: none;
+      }
+    }
+  }
+  & .panel-body {
+    background-color: fade(@vizPurple, 30%);
+    display: none;
   }
 }
 
@@ -142,7 +170,6 @@ body {
     margin-top: -5px;
     color: fade(@vizPurple, 75%);
   }
-  transition: background-color .3s;
 }
 
 .form-signin {

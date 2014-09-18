@@ -63,7 +63,7 @@ body {
   border: 0;
   border-color: #ee9e1a;
   border-radius: 0;
-  background-color: rgba(238, 158, 26, 0.2);
+  background-color: rgba(255, 255, 255, 0);
 }
 .panel .panel-heading {
   border-color: #ee9e1a;
@@ -83,6 +83,34 @@ body {
   max-height: 320px;
   overflow-y: scroll;
   padding: 10px;
+  background-color: rgba(238, 158, 26, 0.2);
+}
+.panel.edit-item {
+  background-color: rgba(255, 255, 255, 0);
+  margin-bottom: 0;
+}
+.panel.edit-item .panel-heading {
+  border-color: #34254a;
+  background-color: #563d7c;
+  background: linear-gradient(#563d7c, #34254a);
+}
+.panel.edit-item .panel-heading .panel-title {
+  color: #ee9e1a;
+  font-size: 16px;
+  font-weight: 400;
+}
+.panel.edit-item .panel-heading .panel-title .show-icon,
+.panel.edit-item .panel-heading .panel-title .hide-icon {
+  float: right;
+  margin-top: 3px;
+  cursor: pointer;
+}
+.panel.edit-item .panel-heading .panel-title .hide-icon {
+  display: none;
+}
+.panel.edit-item .panel-body {
+  background-color: rgba(86, 61, 124, 0.3);
+  display: none;
 }
 .viz-preview {
   display: inline-block;
@@ -112,7 +140,6 @@ body {
   padding-left: 10px;
   margin-top: 0px;
   cursor: pointer;
-  transition: background-color 0.3s;
 }
 .dataset-item:hover {
   background-color: rgba(238, 158, 26, 0.3);
