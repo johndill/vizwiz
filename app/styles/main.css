@@ -1,11 +1,49 @@
-.header h3 {
-  color: #ee9e1a;
+.ui-splitbar {
+  margin-top: 50px;
+  background-color: #eee;
 }
-/* Custom page footer */
-/* Customize container */
-@media (min-width: 768px) {
-  .container {
-    max-width: 730px;
-  }
+.vw-navbar {
+  background-color: #eee;
 }
-/* Responsive: Portrait tablets and up */
+.stretch {
+  overflow-y: hidden;
+  overflow-x: auto;
+}
+.vw-data-accordion,
+.vw-viz-accordion {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+.vw-panel {
+  margin-top: 50px;
+}
+.vw-panel .panel-body {
+  padding: 0;
+  max-height: 133px;
+  overflow-y: scroll;
+}
+.vw-panel .list-group {
+  margin: 0;
+}
+.vw-panel .list-group .list-group-item {
+  border-radius: 0;
+}
+.vw-panel .panel-group .panel {
+  border-radius: 0;
+  border: 0;
+}
+.vw-panel .panel-group .panel-heading + .panel-collapse > .panel-body {
+  border: 0;
+}
+.vw-list-item {
+  padding: 3px 8px;
+}
+.vw-list-item .vw-list-item-title {
+  font-size: 16px;
+  font-weight: bold;
+}
+.vw-list-item .vw-list-item-description {
+  margin-top: -5px;
+  color: #bbb;
+}

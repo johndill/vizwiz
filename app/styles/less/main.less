@@ -1,23 +1,53 @@
-@vizOrange: #EE9E1A;
-@vizYellow: #EEC616;
+.ui-splitbar {
+  margin-top: 50px;
+  background-color: #eee;
+}
 
-.header {
-  h3 {
-    color: @vizOrange;
+.vw-navbar {
+  background-color: #eee;
+}
+
+.stretch {
+  overflow-y: hidden;
+  overflow-x: auto;
+}
+
+.vw-data-accordion, .vw-viz-accordion {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+.vw-panel {
+  margin-top: 50px;
+  & .panel-body {
+    padding: 0;
+    max-height: 133px;
+    overflow-y: scroll;
+  }
+  & .list-group {
+    margin: 0;
+    & .list-group-item {
+      border-radius: 0;
+    }
+  }
+  & .panel-group .panel {
+    border-radius: 0;
+    border: 0;
+  }
+  & .panel-group .panel-heading + .panel-collapse > .panel-body {
+    border: 0;
   }
 }
 
-/* Custom page footer */
-.footer {
-}
-
-/* Customize container */
-@media (min-width: 768px) {
-  .container {
-    max-width: 730px;
+.vw-list-item {
+  padding: 3px 8px;
+  .vw-list-item-title {
+    font-size: 16px;
+    font-weight: bold;
   }
-}
-
-/* Responsive: Portrait tablets and up */
-@media screen and (min-width: 768px) {
+  .vw-list-item-description {
+    margin-top: -5px;
+    color: #bbb;
+  }
 }

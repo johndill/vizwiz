@@ -1,0 +1,39 @@
+<div ui-layout="" class="vw-layout">
+  <div ui-layout="{flow: 'column'}">
+    <div class="vw-panel vw-panel-left" ng-controller="DataCtrl">
+      <accordion>
+        <accordion-group heading="my datasets" is-open="myData.open" class="vw-data-accordion">
+          <ul class="list-group">
+            <li class="list-group-item vw-list-item" ng-repeat="ds in myData.datasets">
+              <div class="vw-list-item-title">
+                {{ ds.title }}
+              </div>
+              <div class="vw-list-item-description">
+                {{ ds.description }}
+              </div>
+            </li>
+          </ul>
+        </accordion-group>
+      </accordion>
+      <div class="vw-data-area">
+        <div class="vw-dataset-title">
+          Title of selected dataset.
+        </div>
+        <div class="vw-dataset-description">
+          Description of selected dataset.
+        </div>
+        <div class="vw-dataset-data">
+          Show data grid here.
+        </div>
+      </div>
+    </div>
+    <div class="vw-panel vw-panel-right">
+      <accordion>
+        <accordion-group heading="my visualizations" is-open="" class="vw-viz-accordion">
+          list visualizations
+        </accordion-group>
+      </accordion>
+    </div>
+    </div>
+  </div>
+</div>
