@@ -1,0 +1,77 @@
+<div ui-layout="" class="vw-layout">
+  <div ui-layout="{flow: 'column'}">
+    <div class="vw-panel vw-panel-left" ng-controller="DataCtrl">
+      <nav class="navbar navbar-inverse vw-panel-header-left" role="navigation">
+        <div class="navbar-header">
+          <span class="navbar-brand vw-navbar-brand">DATA</span>
+        </div>
+      </nav>
+      <accordion>
+        <accordion-group is-open="myData.open" class="vw-data-accordion">
+          <accordion-heading>
+            MY DATA
+            <i class="pull-right glyphicon vw-darkblue" ng-class="{'glyphicon-chevron-down': myData.open, 'glyphicon-chevron-up': !myData.open}"></i>
+          </accordion-heading>
+          <ul class="list-group">
+            <li class="list-group-item vw-list-item" ng-repeat="ds in myData.datasets">
+              <div class="vw-list-item-title">
+                {{ ds.title }}
+              </div>
+              <div class="vw-list-item-description">
+                {{ ds.description }}
+              </div>
+            </li>
+          </ul>
+        </accordion-group>
+      </accordion>
+      <div class="vw-data-area">
+        <div class="vw-dataset-title">
+          <input type="text" class="vw-editable-text" value="Title of selected dataset." title="Click to edit">
+        </div>
+        <div class="vw-dataset-description">
+          <input type="text" class="vw-editable-text" value="Description of selected dataset." title="Click to edit">
+        </div>
+        <div class="vw-dataset-data">
+          <div handsontable class="vw-data-table"></div>
+        </div>
+      </div>
+    </div>
+    <div class="vw-panel vw-panel-right" ng-controller="VizCtrl">
+      <nav class="navbar navbar-inverse vw-panel-header-right" role="navigation">
+        <div class="navbar-header">
+          <span class="navbar-brand vw-navbar-brand">VIZ</span>
+        </div>
+      </nav>
+      <accordion>
+        <accordion-group is-open="myViz.open" class="vw-viz-accordion">
+          <accordion-heading>
+            MY VIZ
+            <i class="pull-right glyphicon vw-darkblue" ng-class="{'glyphicon-chevron-down': myViz.open, 'glyphicon-chevron-up': !myViz.open}"></i>
+          </accordion-heading>
+          <ul class="list-group">
+            <li class="list-group-item vw-list-item" ng-repeat="c in myViz.configs">
+              <div class="vw-list-item-title">
+                {{ c.title }}
+              </div>
+              <div class="vw-list-item-description">
+                {{ c.description }}
+              </div>
+            </li>
+          </ul>
+        </accordion-group>
+      </accordion>
+      <div class="vw-viz-area">
+        <div class="vw-viz-title">
+          Title of selected visualization.
+        </div>
+        <div class="vw-viz-description">
+          Description of selected visualization.
+        </div>
+        <div class="vw-viz-data">
+          Show data visualization here.
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
+</div>

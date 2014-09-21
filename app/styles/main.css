@@ -1,11 +1,109 @@
-.header h3 {
-  color: #ee9e1a;
+.vw-blue {
+  color: #5292f7;
 }
-/* Custom page footer */
-/* Customize container */
-@media (min-width: 768px) {
-  .container {
-    max-width: 730px;
-  }
+.vw-darkblue {
+  color: #4479cc;
 }
-/* Responsive: Portrait tablets and up */
+.ui-splitbar {
+  margin-top: 50px;
+  background-color: #eee;
+}
+.vw-navbar {
+  background-color: #eee;
+}
+.vw-navbar .vw-navbar-brand {
+  padding-top: 10px;
+}
+.vw-navbar-brand {
+  font-size: 24px;
+}
+.vw-panel-header-left,
+.vw-panel-header-right {
+  border-radius: 0;
+}
+.vw-panel-header-left .vw-navbar-brand,
+.vw-panel-header-right .vw-navbar-brand {
+  color: #5292f7;
+}
+.vw-panel-header-right {
+  padding-left: 10px;
+}
+.stretch {
+  overflow-y: hidden;
+  overflow-x: hidden;
+}
+.vw-data-area,
+.vw-viz-area {
+  margin: -10px 10px 10px 10px;
+}
+.vw-data-accordion,
+.vw-viz-accordion {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  z-index: 100;
+}
+.vw-viz-accordion,
+.vw-viz-area {
+  padding-left: 10px;
+}
+.vw-panel {
+  margin-top: 50px;
+}
+.vw-panel .panel-heading {
+  border-radius: 0;
+  border-left: 5px solid #4479cc;
+  border-top: 1px solid #ddd;
+  border-right: 1px solid #ddd;
+  color: #4479cc;
+}
+.vw-panel .panel-body {
+  padding: 0;
+  max-height: 133px;
+  overflow-y: scroll;
+}
+.vw-panel .list-group {
+  margin: 0;
+}
+.vw-panel .list-group .list-group-item {
+  border-radius: 0;
+}
+.vw-panel .panel-group .panel {
+  border-radius: 0;
+  border: 0;
+}
+.vw-panel .panel-group .panel-heading + .panel-collapse > .panel-body {
+  border: 0;
+}
+.vw-dataset-title,
+.vw-viz-title {
+  font-size: 20px;
+  font-weight: bold;
+}
+.vw-dataset-description,
+.vw-viz-description {
+  margin-top: -5px;
+  color: #bbb;
+}
+.vw-editable-text {
+  border: 0;
+  background-color: transparent;
+  width: 100%;
+}
+.vw-dataset-data {
+  margin-top: 10px;
+}
+.vw-data-table {
+  overflow: auto;
+}
+.vw-list-item {
+  padding: 3px 8px;
+}
+.vw-list-item .vw-list-item-title {
+  font-size: 16px;
+  font-weight: bold;
+}
+.vw-list-item .vw-list-item-description {
+  margin-top: -5px;
+  color: #bbb;
+}

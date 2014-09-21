@@ -1,23 +1,122 @@
-@vizOrange: #EE9E1A;
-@vizYellow: #EEC616;
+@vwBlue: #5292F7;
+@vwDarkBlue: #4479CC;
 
-.header {
-  h3 {
-    color: @vizOrange;
+.vw-blue {
+  color: @vwBlue;
+}
+
+.vw-darkblue {
+  color: @vwDarkBlue;
+}
+
+.ui-splitbar {
+  margin-top: 50px;
+  background-color: #eee;
+}
+
+.vw-navbar {
+  background-color: #eee;
+  & .vw-navbar-brand {
+    padding-top: 10px;
   }
 }
 
-/* Custom page footer */
-.footer {
+.vw-navbar-brand {
+  font-size: 24px;
 }
 
-/* Customize container */
-@media (min-width: 768px) {
-  .container {
-    max-width: 730px;
+.vw-panel-header-left, .vw-panel-header-right {
+  border-radius: 0;
+  & .vw-navbar-brand {
+    color: @vwBlue;
   }
 }
 
-/* Responsive: Portrait tablets and up */
-@media screen and (min-width: 768px) {
+.vw-panel-header-right {
+  padding-left: 10px;
+}
+
+.stretch {
+  overflow-y: hidden;
+  overflow-x: hidden;
+}
+
+.vw-data-area, .vw-viz-area {
+  margin: -10px 10px 10px 10px;
+}
+
+.vw-data-accordion, .vw-viz-accordion {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  z-index: 100;
+}
+
+.vw-viz-accordion, .vw-viz-area {
+  padding-left: 10px;
+}
+
+.vw-panel {
+  margin-top: 50px;
+  & .panel-heading {
+    border-radius: 0;
+    border-left: 5px solid @vwDarkBlue;
+    border-top: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+    color: @vwDarkBlue;
+  }
+  & .panel-body {
+    padding: 0;
+    max-height: 133px;
+    overflow-y: scroll;
+  }
+  & .list-group {
+    margin: 0;
+    & .list-group-item {
+      border-radius: 0;
+    }
+  }
+  & .panel-group .panel {
+    border-radius: 0;
+    border: 0;
+  }
+  & .panel-group .panel-heading + .panel-collapse > .panel-body {
+    border: 0;
+  }
+}
+
+.vw-dataset-title, .vw-viz-title {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.vw-dataset-description, .vw-viz-description {
+  margin-top: -5px;
+  color: #bbb;
+}
+
+.vw-editable-text {
+  border: 0;
+  background-color: transparent;
+  width: 100%;
+}
+
+.vw-dataset-data {
+  margin-top: 10px;
+}
+
+.vw-data-table {
+  overflow: auto;
+}
+
+.vw-list-item {
+  padding: 3px 8px;
+  .vw-list-item-title {
+    font-size: 16px;
+    font-weight: bold;
+  }
+  .vw-list-item-description {
+    margin-top: -5px;
+    color: #bbb;
+  }
 }
