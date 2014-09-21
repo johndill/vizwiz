@@ -1,3 +1,14 @@
+@vwBlue: #5292F7;
+@vwDarkBlue: #4479CC;
+
+.vw-blue {
+  color: @vwBlue;
+}
+
+.vw-darkblue {
+  color: @vwDarkBlue;
+}
+
 .ui-splitbar {
   margin-top: 50px;
   background-color: #eee;
@@ -5,10 +16,20 @@
 
 .vw-navbar {
   background-color: #eee;
+  & .vw-navbar-brand {
+    padding-top: 10px;
+  }
+}
+
+.vw-navbar-brand {
+  font-size: 24px;
 }
 
 .vw-panel-header-left, .vw-panel-header-right {
   border-radius: 0;
+  & .vw-navbar-brand {
+    color: @vwBlue;
+  }
 }
 
 .vw-panel-header-right {
@@ -37,6 +58,13 @@
 
 .vw-panel {
   margin-top: 50px;
+  & .panel-heading {
+    border-radius: 0;
+    border-left: 5px solid @vwDarkBlue;
+    border-top: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+    color: @vwDarkBlue;
+  }
   & .panel-body {
     padding: 0;
     max-height: 133px;
