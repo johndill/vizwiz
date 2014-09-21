@@ -2,6 +2,12 @@
 
 angular.module('vizwizApp')
   .controller('DataCtrl', function ($scope) {
+    $scope.data = [
+      {name: 'b', age:10},
+      {name: 'b', age:11},
+      {name: 'c', age:12}
+    ];
+  
     $scope.myData = {
       open: true,
       datasets: [

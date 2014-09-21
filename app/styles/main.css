@@ -61,6 +61,9 @@
   margin-top: -5px;
   color: #bbb;
 }
+.vw-dataset-data {
+  margin-top: 10px;
+}
 .vw-list-item {
   padding: 3px 8px;
 }
