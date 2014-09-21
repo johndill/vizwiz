@@ -7,15 +7,31 @@
   background-color: #eee;
 }
 
+.vw-panel-header-left, .vw-panel-header-right {
+  border-radius: 0;
+}
+
+.vw-panel-header-right {
+  padding-left: 10px;
+}
+
 .stretch {
   overflow-y: hidden;
-  overflow-x: auto;
+  overflow-x: hidden;
+}
+
+.vw-data-area, .vw-viz-area {
+  margin: -10px 10px 10px 10px;
 }
 
 .vw-data-accordion, .vw-viz-accordion {
   position: absolute;
   bottom: 0;
   width: 100%;
+}
+
+.vw-viz-accordion, .vw-viz-area {
+  padding-left: 10px;
 }
 
 .vw-panel {
@@ -38,6 +54,16 @@
   & .panel-group .panel-heading + .panel-collapse > .panel-body {
     border: 0;
   }
+}
+
+.vw-dataset-title, .vw-viz-title {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.vw-dataset-description, .vw-viz-description {
+  margin-top: -5px;
+  color: #bbb;
 }
 
 .vw-list-item {
