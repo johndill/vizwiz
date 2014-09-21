@@ -10,8 +10,10 @@ angular.module('vizwizApp')
         var data = scope.data;
         $(element).handsontable({
           data: data,
-          colHeaders: ['Name', 'Age'],
-          rowHeaders: true
+          colHeaders: true,
+          rowHeaders: true,
+          minSpareRows: 1,
+          contextMenu: true
         });
       }
     };
