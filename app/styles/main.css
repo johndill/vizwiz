@@ -19,7 +19,6 @@
 .vw-data-area,
 .vw-viz-area {
   margin: -10px 10px 10px 10px;
-  overflow: scroll;
 }
 .vw-data-accordion,
 .vw-viz-accordion {
@@ -63,8 +62,16 @@
   margin-top: -5px;
   color: #bbb;
 }
+.vw-editable-text {
+  border: 0;
+  background-color: transparent;
+  width: 100%;
+}
 .vw-dataset-data {
   margin-top: 10px;
+}
+.vw-data-table {
+  overflow: auto;
 }
 .vw-list-item {
   padding: 3px 8px;
