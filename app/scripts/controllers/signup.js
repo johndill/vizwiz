@@ -26,7 +26,20 @@ angular.module('vizwizApp')
           $rootScope.ref.child('users').child(user.uid).set({
             settings: {
               displayName: $scope.displayName
-            }
+            },
+            datasets: [
+              {
+                name: 'Demo',
+                description: 'Car Sales',
+                data: [
+                  ['', 'Maserati', 'Mazda', 'Mercedes', 'Mini', 'Mitsubishi'],
+                  ['2009', 0, 2941, 4303, 354, 5814],
+                  ['2010', 5, 2905, 2867, 412, 5284],
+                  ['2011', 4, 2517, 4822, 552, 6127],
+                  ['2012', 2, 2422, 5399, 776, 4151]
+                ]
+              }
+            ]
           });
           
           // login
@@ -45,6 +58,7 @@ angular.module('vizwizApp')
                 console.log('Error retrieving settings: ' + err.code + ' - ' + err.message);
                 $rootScope.settings = { displayName: $scope.displayName };
               });
+            $rootScope.$broadcast('vw-login');
             $location.path('/');
           }, function(error) {
             $scope.loginError = error.message.replace('FirebaseSimpleLogin: ','');

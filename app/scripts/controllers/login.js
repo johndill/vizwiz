@@ -25,7 +25,8 @@ angular.module('vizwizApp')
               console.log(snapshot.val());
             }, function (err) {
               console.log('Error retrieving settings: ' + err.code + ' - ' + err.message);
-              $rootScope.settings = { displayName: $scope.displayName };
+              $rootScope.settings = { displayName: 'User' };
+              $rootScope.$broadcast('vw-login');
             });
           $location.path('/');
         },

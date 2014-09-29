@@ -25,12 +25,25 @@
     <!-- Add your site or application content here -->
     <div class="container">
       <div class="header">
-        <div class="navbar navbar-default navbar-fixed-top vw-navbar" role="navigation">
+        <div class="navbar navbar-default navbar-fixed-top vw-navbar" role="navigation" data-ng-controller="NavCtrl">
           <div class="navbar-header">
             <span class="navbar-brand vw-navbar-brand">
               <img src="images/vizwiz-blue.png" class="vw-navbar-brand-image">
               vizwiz
             </span>
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#nav-links">
+              <span class="glyphicon glyphicon-user"></span>
+            </button>
+          </div>
+          <div class="collapse navbar-collapse" id="nav-links">
+            <ul class="nav navbar-nav navbar-right">
+              <li><a ng-href="#/login">Login</a></li>
+              <li><a ng-href="#/signup">Signup</a></li>
+              <li><a ng-click="logout()">Logout</a></li>
+            </ul>
+            <p class="navbar-text navbar-right">
+              Logged in as {{ displayName }}
+            </p>
           </div>
         </div>
       </div>
@@ -84,7 +97,9 @@
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
         <script src="scripts/app.js"></script>
         <script src="scripts/services/simpleLogin.js"></script>
+        <script src="scripts/services/userData.js"></script>
         <script src="scripts/controllers/main.js"></script>
+        <script src="scripts/controllers/nav.js"></script>
         <script src="scripts/controllers/about.js"></script>
         <script src="scripts/controllers/login.js"></script>
         <script src="scripts/controllers/signup.js"></script>
