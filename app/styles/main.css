@@ -107,3 +107,41 @@
   margin-top: -5px;
   color: #bbb;
 }
+.vw-form-signin {
+  max-width: 300px;
+  margin: 80px auto 0 auto;
+}
+.vw-form-signin .vw-form-signin-heading {
+  color: #4479cc;
+}
+.vw-form-signin .checkbox {
+  margin-left: 20px;
+}
+.vw-form-signin input {
+  border-radius: 0;
+  margin-bottom: -1px;
+}
+.vw-form-signin input.vw-round-top {
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+}
+.vw-form-signin input.vw-round-bottom {
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+.vw-form-signin .vw-other-login-option {
+  margin-top: 10px;
+}
+.vw-btn-primary {
+  background-color: #4479cc;
+  border-color: #2f61ae;
+}
+.vw-btn-primary:hover {
+  background-color: #2f61ae;
+}
+.vw-link {
+  color: #4479cc;
+}
+.vw-link:hover {
+  color: #2f61ae;
+}

@@ -7,15 +7,15 @@
         </div>
       </nav>
       <accordion>
-        <accordion-group is-open="myData.open" class="vw-data-accordion">
+        <accordion-group is-open="dataListOpen" class="vw-data-accordion">
           <accordion-heading>
             MY DATA
-            <i class="pull-right glyphicon vw-darkblue" ng-class="{'glyphicon-chevron-down': myData.open, 'glyphicon-chevron-up': !myData.open}"></i>
+            <i class="pull-right glyphicon vw-darkblue" ng-class="{'glyphicon-chevron-down': dataListOpen, 'glyphicon-chevron-up': !dataListOpen}"></i>
           </accordion-heading>
           <ul class="list-group">
-            <li class="list-group-item vw-list-item" ng-repeat="ds in myData.datasets">
+            <li class="list-group-item vw-list-item" ng-repeat="ds in userData.datasets">
               <div class="vw-list-item-title">
-                {{ ds.title }}
+                {{ ds.name }}
               </div>
               <div class="vw-list-item-description">
                 {{ ds.description }}
@@ -26,10 +26,10 @@
       </accordion>
       <div class="vw-data-area">
         <div class="vw-dataset-title">
-          <input type="text" class="vw-editable-text" value="Title of selected dataset." title="Click to edit">
+          <input type="text" class="vw-editable-text" value="Name" title="Click to edit" ng-model="userData.datasets[activeDataset].name">
         </div>
         <div class="vw-dataset-description">
-          <input type="text" class="vw-editable-text" value="Description of selected dataset." title="Click to edit">
+          <input type="text" class="vw-editable-text" value="Description of selected dataset." title="Click to edit" ng-model="userData.datasets[activeDataset].description">
         </div>
         <div class="vw-dataset-data">
           <div handsontable class="vw-data-table"></div>

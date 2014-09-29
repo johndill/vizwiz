@@ -7,15 +7,15 @@
     <meta name="viewport" content="width=device-width">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!-- build:css(.) styles/vendor.css -->
+    <link rel="stylesheet" href="bower_components/angular-ui-layout/ui-layout.css" />
     <!-- bower:css -->
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
-    <link rel="stylesheet" href="bower_components/angular-ui-layout/ui-layout.css"/>
     <!-- endbower -->
-    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/jquery-handsontable/0.10.2/jquery.handsontable.full.css">
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-handsontable/0.10.2/jquery.handsontable.full.css">
   </head>
   <body ng-app="vizwizApp" class="vwBody">
     <!--[if lt IE 7]>
@@ -25,18 +25,30 @@
     <!-- Add your site or application content here -->
     <div class="container">
       <div class="header">
-        <div class="navbar navbar-default navbar-fixed-top vw-navbar" role="navigation">
+        <div class="navbar navbar-default navbar-fixed-top vw-navbar" role="navigation" data-ng-controller="NavCtrl">
           <div class="navbar-header">
             <span class="navbar-brand vw-navbar-brand">
               <img src="images/vizwiz-blue.png" class="vw-navbar-brand-image">
               vizwiz
             </span>
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#nav-links">
+              <span class="glyphicon glyphicon-user"></span>
+            </button>
+          </div>
+          <div class="collapse navbar-collapse" id="nav-links">
+            <ul class="nav navbar-nav navbar-right">
+              <li><a ng-href="#/login">Login</a></li>
+              <li><a ng-href="#/signup">Signup</a></li>
+              <li><a ng-click="logout()">Logout</a></li>
+            </ul>
+            <p class="navbar-text navbar-right">
+              Logged in as {{ displayName }}
+            </p>
           </div>
         </div>
       </div>
 
       <div ng-view=""></div>
-
       <div class="footer">
       </div>
     </div>
@@ -74,14 +86,23 @@
     <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
     <script src="bower_components/raf/index.js"></script>
     <script src="bower_components/angular-ui-layout/ui-layout.js"></script>
+    <script src="bower_components/firebase/firebase.js"></script>
+    <script src="bower_components/firebase-simple-login/firebase-simple-login.js"></script>
+    <script src="bower_components/mockfirebase/dist/mockfirebase.js"></script>
+    <script src="bower_components/angularfire/dist/angularfire.min.js"></script>
     <!-- endbower -->
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-handsontable/0.10.2/jquery.handsontable.full.js"></script>
     <!-- endbuild -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-handsontable/0.10.2/jquery.handsontable.full.js"></script>
 
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
         <script src="scripts/app.js"></script>
+        <script src="scripts/services/simpleLogin.js"></script>
+        <script src="scripts/services/userData.js"></script>
         <script src="scripts/controllers/main.js"></script>
+        <script src="scripts/controllers/nav.js"></script>
         <script src="scripts/controllers/about.js"></script>
+        <script src="scripts/controllers/login.js"></script>
+        <script src="scripts/controllers/signup.js"></script>
         <script src="scripts/controllers/data.js"></script>
         <script src="scripts/controllers/viz.js"></script>
         <script src="scripts/directives/handsontable.js"></script>
