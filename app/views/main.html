@@ -26,10 +26,10 @@
       </accordion>
       <div class="vw-data-area">
         <div class="vw-dataset-title">
-          <input type="text" class="vw-editable-text" value="Name" title="Click to edit">
+          <input type="text" class="vw-editable-text" value="Name" title="Click to edit" ng-model="userData.datasets[activeDataset].name">
         </div>
         <div class="vw-dataset-description">
-          <input type="text" class="vw-editable-text" value="Description of selected dataset." title="Click to edit">
+          <input type="text" class="vw-editable-text" value="Description of selected dataset." title="Click to edit" ng-model="userData.datasets[activeDataset].description">
         </div>
         <div class="vw-dataset-data">
           <div handsontable class="vw-data-table"></div>

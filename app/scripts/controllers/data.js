@@ -1,20 +1,32 @@
 'use strict';
 
+/*global Firebase */
+
 angular.module('vizwizApp')
-  .controller('DataCtrl', ['$scope', '$rootScope', 'UserData', function ($scope, $rootScope, UserData) {
+  .controller('DataCtrl', ['$scope', '$rootScope', '$firebase', 'simpleLogin', 'firebaseUrl', function ($scope, $rootScope, $firebase, simpleLogin, firebaseUrl) {
+    var ref = new Firebase(firebaseUrl + '/users/' + simpleLogin.user.uid);
+    var activeDataset = '0';
+    var userData = $firebase(ref).$asObject();
+    
+    var loadData = function(index) {
+      // load data from specified index
+      var dataRef = $firebase(ref.child('datasets').child(index).child('data'));
+      var dataset = dataRef.$asArray();
+      dataset.$loaded().then(function() {
+        $scope.data = dataset;//.slice(0, dataset.length);
+        $rootScope.$broadcast('vw:data-updated');
+      });
+    };
+    
+    // load first dataset
+    loadData(activeDataset);
+    
     $scope.displayName = $rootScope.displayName;
     $scope.dataListOpen = true;
+    $scope.activeDataset = activeDataset;
     
-    $scope.userData = new UserData();
-    
-    /*
-    $scope.data = [
-      ['', 'Maserati', 'Mazda', 'Mercedes', 'Mini', 'Mitsubishi'],
-      ['2009', 0, 2941, 4303, 354, 5814],
-      ['2010', 5, 2905, 2867, 412, 5284],
-      ['2011', 4, 2517, 4822, 552, 6127],
-      ['2012', 2, 2422, 5399, 776, 4151]
-    ];
-    */
+    // 3 way binding for dataset titles and descriptions
+    $scope.userData = userData;
+    userData.$bindTo($scope, 'userData');
   
   }]);

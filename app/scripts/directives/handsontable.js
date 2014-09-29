@@ -8,7 +8,7 @@ angular.module('vizwizApp')
       restrict: 'A',
       link: function(scope, element) {
         var data = scope.data;
-        var tableHeight = $(window).height() - 215 - 135 * scope.myData.open;
+        var tableHeight = $(window).height() - 215 - 135 * scope.dataListOpen;
         
         element.height(tableHeight);
         $(element).handsontable({
@@ -25,8 +25,12 @@ angular.module('vizwizApp')
           $(element).handsontable('render');
         });
         
+        scope.$on('vw:data-updated', function() {
+          $(element).handsontable({ data: scope.data });
+        });
+        
         $(window).on('resize', function() {
-          tableHeight = $(window).height() - 215 - 135 * scope.myData.open;
+          tableHeight = $(window).height() - 215 - 135 * scope.dataListOpen;
           element.height(tableHeight);
           $(element).handsontable('render');
         });
