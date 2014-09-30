@@ -37,12 +37,12 @@
           </div>
           <div class="collapse navbar-collapse" id="nav-links">
             <ul class="nav navbar-nav navbar-right">
-              <li><a ng-href="#/login">Login</a></li>
-              <li><a ng-href="#/signup">Signup</a></li>
-              <li><a ng-click="logout()">Logout</a></li>
+              <li><a ng-href="#/login" ng-hide="user">Login</a></li>
+              <li><a ng-href="#/signup" ng-hide="user">Signup</a></li>
+              <li><a ng-click="logout()" ng-show="user">Logout</a></li>
             </ul>
-            <p class="navbar-text navbar-right">
-              Logged in as {{ displayName }}
+            <p class="navbar-text navbar-right" ng-show="settings.displayName">
+              Logged in as {{ settings.displayName }}
             </p>
           </div>
         </div>

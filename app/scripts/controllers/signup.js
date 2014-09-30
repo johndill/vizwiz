@@ -50,6 +50,7 @@ angular.module('vizwizApp')
             console.log(user);
             console.log('login');
             $scope.loginError = false;
+            $rootScope.user = user;
             $rootScope.ref.child('users').child(user.uid).child('settings')
               .on('value', function (snapshot) {
                 $rootScope.settings = snapshot.val();
