@@ -17,12 +17,11 @@ angular.module('vizwizApp')
       })
       .then(
         function(user) {
-          console.log(user);
           $scope.loginError = false;
+          $rootScope.user = user;
           $rootScope.ref.child('users').child(user.uid).child('settings')
             .on('value', function (snapshot) {
               $rootScope.settings = snapshot.val();
-              console.log(snapshot.val());
             }, function (err) {
               console.log('Error retrieving settings: ' + err.code + ' - ' + err.message);
               $rootScope.settings = { displayName: 'User' };
@@ -32,7 +31,6 @@ angular.module('vizwizApp')
         },
         function(error) {
           $scope.loginError = error.message.replace('FirebaseSimpleLogin: ', '');
-          console.log(error);
         });
     };
   }

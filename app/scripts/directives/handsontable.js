@@ -18,6 +18,7 @@ angular.module('vizwizApp')
           minSpareRows: 1,
           contextMenu: true,
           afterChange: function (change, source) {
+            console.log(source);
             if (source === 'loadData') {
               return; //don't save this change
             } else {
@@ -27,6 +28,12 @@ angular.module('vizwizApp')
                 scope.data.$save(change[i][0]);
               }
             }
+          },
+          afterCreateRow: function() {
+            console.log('afterCreateRow...');
+            console.log(event);
+            console.log(data);
+            scope.data.$add(['']);    
           }
         });
         

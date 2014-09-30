@@ -1,0 +1,7 @@
+{
+    "jscodehints.detectedExclusions": [
+        "/home/dill/dev/vizwiz/bower_components/jquery/src/var/pnum.js",
+        "/home/dill/dev/vizwiz/app/scripts/controllers/signup.js",
+        "/home/dill/dev/vizwiz/app/scripts/app.js"
+    ]
+}
