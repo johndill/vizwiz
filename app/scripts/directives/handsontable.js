@@ -16,7 +16,18 @@ angular.module('vizwizApp')
           colHeaders: true,
           rowHeaders: true,
           minSpareRows: 1,
-          contextMenu: true
+          contextMenu: true,
+          afterChange: function (change, source) {
+            if (source === 'loadData') {
+              return; //don't save this change
+            } else {
+              // save each row that was changed
+              for (var i = 0; i < change.length; i++) {
+                console.log(change[i][0]);
+                scope.data.$save(change[i][0]);
+              }
+            }
+          }
         });
         
         scope.$watch('myData.open', function(newVal) {
@@ -25,7 +36,7 @@ angular.module('vizwizApp')
           $(element).handsontable('render');
         });
         
-        scope.$on('vw:data-updated', function() {
+        scope.$on('vw:data-loaded', function() {
           $(element).handsontable({ data: scope.data });
         });
         
