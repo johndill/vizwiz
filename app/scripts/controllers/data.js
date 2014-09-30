@@ -13,8 +13,8 @@ angular.module('vizwizApp')
       var dataRef = $firebase(ref.child('datasets').child(index).child('data'));
       var dataset = dataRef.$asArray();
       dataset.$loaded().then(function() {
-        $scope.data = dataset;//.slice(0, dataset.length);
-        $rootScope.$broadcast('vw:data-updated');
+        $scope.data = dataset;
+        $rootScope.$broadcast('vw:data-loaded');
       });
     };
     
