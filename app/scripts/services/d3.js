@@ -5,7 +5,6 @@
 angular.module('vizwizApp')
   .factory('d3Service', ['$document', '$window', '$q', '$rootScope',
     function($document, $window, $q, $rootScope) {
-      console.log('d3service');
       var d = $q.defer(),
           d3service = { d3: function() { return d.promise; } };
       function onScriptLoad() {

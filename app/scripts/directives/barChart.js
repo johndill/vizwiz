@@ -79,7 +79,19 @@ angular.module('vizwizApp')
                     .attr('width', function(d) {
                       return xScale(d.score);
                   });
-            }, 500);
+              svg.selectAll('text')
+                .data(data)
+                .enter()
+                  .append('text')
+                  .attr('fill', '#fff')
+                  .attr('y', function(d, i) {
+                    return i * (barHeight + barPadding) + 15;
+                })
+                .attr('x', 15)
+                .text(function(d) {
+                  return d.name + ' (scored: ' + d.score + ')';
+                });
+            }, 200);
           };
         });
       }
