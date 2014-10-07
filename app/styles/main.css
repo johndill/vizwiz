@@ -43,6 +43,9 @@
   width: 100%;
   z-index: 100;
 }
+.vw-dataset-colheaders {
+  display: none;
+}
 .vw-viz-accordion,
 .vw-viz-area {
   padding-left: 10px;
