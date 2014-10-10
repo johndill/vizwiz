@@ -1,35 +1,40 @@
 'use strict';
 
 angular.module('vizwizApp')
-  .controller('VizCtrl', function ($scope) {
-    $scope.myViz = {
-      open: true,
-      configs: [
-        { 
-          title: 'viz-1', 
-          description: 'this is description 1', 
-          config: ''
-        },
-        { 
-          title: 'viz-2', 
-          description: 'this is description 2', 
-          config: ''
-        },
-        { 
-          title: 'viz-3', 
-          description: 'this is description 3', 
-          config: ''
-        },
-        { 
-          title: 'viz-4', 
-          description: 'this is description 4', 
-          config: ''
-        },
-        { 
-          title: 'viz-5', 
-          description: 'this is description 5', 
-          config: ''
-        },
-      ],
-    };
-  });
+  .controller('VizCtrl', ['$scope', '$rootScope', function ($scope, $rootScope) {
+    $scope.activeVizId = '0';
+    $scope.vizListOpen = true;
+    
+    // build dataset for chart whenever data is changed
+    $scope.$watch('userData', function(newData) {
+      if (newData) {
+        var dataset = newData.datasets[$rootScope.activeDataId],
+            colHeaders = dataset.columnHeadersInFirstRow,
+            vizData = [],
+            numCols = $rootScope.activeData[0].length,
+            colName;
+        
+        for (var i = 0; i < $rootScope.activeData.length - 1; i++) {
+          // skip first row if col headers in first row
+          if (colHeaders && i === 0) { i++; }
+          
+          // add empty object to vizData array
+          vizData.push({});
+          
+          // add data for each row to vizData
+          for (var j = 0; j < numCols; j++) {
+            if (colHeaders) {
+              colName = $rootScope.activeData[0][j];
+            } else {
+              colName = String.fromCharCode(65 + j);
+            }
+            
+            vizData[i - 1][colName] = parseFloat($rootScope.activeData[i][j]);
+          }
+        }
+        
+        $scope.vizData = vizData;
+        $rootScope.$broadcast('vw:chart-data-updated');
+      }
+    });
+  }]);

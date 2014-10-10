@@ -4,29 +4,32 @@
 
 angular.module('vizwizApp')
   .controller('DataCtrl', ['$scope', '$rootScope', '$firebase', 'simpleLogin', 'firebaseUrl', function ($scope, $rootScope, $firebase, simpleLogin, firebaseUrl) {
-    var ref = new Firebase(firebaseUrl + '/users/' + simpleLogin.user.uid);
-    var activeDataset = '0';
-    var userData = $firebase(ref).$asObject();
+    var userRef = new Firebase(firebaseUrl + '/users/' + simpleLogin.user.uid);
+    var userObj = $firebase(userRef).$asObject();
+    userObj.$loaded().then(function() {
+      $rootScope.userData = userObj;
+    });
     
     var loadData = function(index) {
       // load data from specified index
-      var dataRef = $firebase(ref.child('datasets').child(index).child('data'));
+      var dataRef = $firebase(userRef.child('datasets').child(index).child('data'));
       var dataset = dataRef.$asArray();
       dataset.$loaded().then(function() {
-        $scope.data = dataset;
+        $rootScope.activeData = dataset;
+        $scope.data = $rootScope.activeData;
         $rootScope.$broadcast('vw:data-loaded');
       });
     };
+      
+    // set default dataset
+    $rootScope.activeDataId = '0';
     
     // load first dataset
-    loadData(activeDataset);
+    loadData($rootScope.activeDataId);
     
     $scope.displayName = $rootScope.displayName;
     $scope.dataListOpen = true;
-    $scope.activeDataset = activeDataset;
     
     // 3 way binding for dataset titles and descriptions
-    $scope.userData = userData;
-    userData.$bindTo($scope, 'userData');
-  
+    userObj.$bindTo($rootScope, 'userData');
   }]);

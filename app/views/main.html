@@ -26,10 +26,13 @@
       </accordion>
       <div class="vw-data-area">
         <div class="vw-dataset-title">
-          <input type="text" class="vw-editable-text" value="Name" title="Click to edit" ng-model="userData.datasets[activeDataset].name">
+          <input type="text" class="vw-editable-text" value="Name" title="Click to edit" ng-model="userData.datasets[activeDataId].name">
         </div>
         <div class="vw-dataset-description">
-          <input type="text" class="vw-editable-text" value="Description of selected dataset." title="Click to edit" ng-model="userData.datasets[activeDataset].description">
+          <input type="text" class="vw-editable-text" value="Description of selected dataset." title="Click to edit" ng-model="userData.datasets[activeDataId].description">
+        </div>
+        <div class="vw-dataset-colheaders">
+          <input type="checkbox" id="colHeaders" name="colHeaders" data-ng-model="userData.datasets[activeDataId].columnHeadersInFirstRow" disabled /> Column headers in first row.
         </div>
         <div class="vw-dataset-data">
           <div handsontable class="vw-data-table"></div>
@@ -43,32 +46,32 @@
         </div>
       </nav>
       <accordion>
-        <accordion-group is-open="myViz.open" class="vw-viz-accordion">
+        <accordion-group is-open="vizListOpen" class="vw-viz-accordion">
           <accordion-heading>
             MY VIZ
-            <i class="pull-right glyphicon vw-darkblue" ng-class="{'glyphicon-chevron-down': myViz.open, 'glyphicon-chevron-up': !myViz.open}"></i>
+            <i class="pull-right glyphicon vw-darkblue" ng-class="{'glyphicon-chevron-down': vizListOpen, 'glyphicon-chevron-up': !vizListOpen}"></i>
           </accordion-heading>
           <ul class="list-group">
-            <li class="list-group-item vw-list-item" ng-repeat="c in myViz.configs">
+            <li class="list-group-item vw-list-item" ng-repeat="v in userData.visualizations">
               <div class="vw-list-item-title">
-                {{ c.title }}
+                {{ v.name }}
               </div>
               <div class="vw-list-item-description">
-                {{ c.description }}
+                {{ v.description }}
               </div>
             </li>
           </ul>
         </accordion-group>
       </accordion>
       <div class="vw-viz-area">
-        <div class="vw-viz-title">
-          Title of selected visualization.
+        <div class="vw-dataset-title">
+          <input type="text" class="vw-editable-text" value="Name" title="Click to edit" ng-model="userData.visualizations[activeVizId].name">
         </div>
-        <div class="vw-viz-description">
-          Description of selected visualization.
+        <div class="vw-dataset-description">
+          <input type="text" class="vw-editable-text" value="Description of selected dataset." title="Click to edit" ng-model="userData.visualizations[activeVizId].description">
         </div>
         <div class="vw-viz-data">
-          Show data visualization here.
+          <bar-chart bar-height="20" bar-padding="5" dataSource="vizData"></bar-chart>
         </div>
       </div>
     </div>
