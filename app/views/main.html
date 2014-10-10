@@ -1,0 +1,80 @@
+<div ui-layout="" class="vw-layout">
+  <div ui-layout="{flow: 'column'}">
+    <div class="vw-panel vw-panel-left" ng-controller="DataCtrl">
+      <nav class="navbar navbar-inverse vw-panel-header-left" role="navigation">
+        <div class="navbar-header">
+          <span class="navbar-brand vw-navbar-brand">DATA</span>
+        </div>
+      </nav>
+      <accordion>
+        <accordion-group is-open="dataListOpen" class="vw-data-accordion">
+          <accordion-heading>
+            MY DATA
+            <i class="pull-right glyphicon vw-darkblue" ng-class="{'glyphicon-chevron-down': dataListOpen, 'glyphicon-chevron-up': !dataListOpen}"></i>
+          </accordion-heading>
+          <ul class="list-group">
+            <li class="list-group-item vw-list-item" ng-repeat="ds in userData.datasets">
+              <div class="vw-list-item-title">
+                {{ ds.name }}
+              </div>
+              <div class="vw-list-item-description">
+                {{ ds.description }}
+              </div>
+            </li>
+          </ul>
+        </accordion-group>
+      </accordion>
+      <div class="vw-data-area">
+        <div class="vw-dataset-title">
+          <input type="text" class="vw-editable-text" value="Name" title="Click to edit" ng-model="userData.datasets[activeDataId].name">
+        </div>
+        <div class="vw-dataset-description">
+          <input type="text" class="vw-editable-text" value="Description of selected dataset." title="Click to edit" ng-model="userData.datasets[activeDataId].description">
+        </div>
+        <div class="vw-dataset-colheaders">
+          <input type="checkbox" id="colHeaders" name="colHeaders" data-ng-model="userData.datasets[activeDataId].columnHeadersInFirstRow" disabled /> Column headers in first row.
+        </div>
+        <div class="vw-dataset-data">
+          <div handsontable class="vw-data-table"></div>
+        </div>
+      </div>
+    </div>
+    <div class="vw-panel vw-panel-right" ng-controller="VizCtrl">
+      <nav class="navbar navbar-inverse vw-panel-header-right" role="navigation">
+        <div class="navbar-header">
+          <span class="navbar-brand vw-navbar-brand">VIZ</span>
+        </div>
+      </nav>
+      <accordion>
+        <accordion-group is-open="vizListOpen" class="vw-viz-accordion">
+          <accordion-heading>
+            MY VIZ
+            <i class="pull-right glyphicon vw-darkblue" ng-class="{'glyphicon-chevron-down': vizListOpen, 'glyphicon-chevron-up': !vizListOpen}"></i>
+          </accordion-heading>
+          <ul class="list-group">
+            <li class="list-group-item vw-list-item" ng-repeat="v in userData.visualizations">
+              <div class="vw-list-item-title">
+                {{ v.name }}
+              </div>
+              <div class="vw-list-item-description">
+                {{ v.description }}
+              </div>
+            </li>
+          </ul>
+        </accordion-group>
+      </accordion>
+      <div class="vw-viz-area">
+        <div class="vw-dataset-title">
+          <input type="text" class="vw-editable-text" value="Name" title="Click to edit" ng-model="userData.visualizations[activeVizId].name">
+        </div>
+        <div class="vw-dataset-description">
+          <input type="text" class="vw-editable-text" value="Description of selected dataset." title="Click to edit" ng-model="userData.visualizations[activeVizId].description">
+        </div>
+        <div class="vw-viz-data">
+          <bar-chart bar-height="20" bar-padding="5" dataSource="vizData"></bar-chart>
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
+</div>
